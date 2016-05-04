@@ -1,0 +1,12 @@
+"*":
+  core:
+    disabledPackages: [
+      "exception-reporting"
+    ]
+  editor:
+    fontSize: 15
+  welcome:
+    showOnStartup: false
+".c.source":
+  editor:
+    tabLength: 8
