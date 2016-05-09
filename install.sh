@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+#
+# Tested only with Ubuntu 16.04 Desktop
+#
+
 ################
 # Atom
 ################
@@ -17,14 +21,15 @@ apm install autocomplete-paths
 # Emacs
 ################
 cp .emacs ~/
-# echo ""
+echo ""
 
 if ! [[ -x "$(command -v emacs)" ]]; then
   echo "emacs not found. Is it installed?" >&2
   exit
 fi
 
-sudo apt-get install libclang-dev
+echo "Install dependencies:"
+sudo apt-get install libclang-dev cmake
 ./emacs_pkgs.el
 
 mkdir /tmp/irony
