@@ -31,6 +31,9 @@
 					 (revert-buffer-function " %b"
 								 ("%b - Dir:  " default-directory)))))))
 
+;; Delete trailing whitespace on save
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
+
 ;; Don't save backup files in working directory
 (setq backup-directory-alist '(("." . "~/.emacs-backups"))
       backup-by-copying t    ; Don't delink hardlinks
