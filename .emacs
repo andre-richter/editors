@@ -60,52 +60,74 @@
 ;; Various add-ons for C syntax highlighting
 ;;
 ;; Function calls
-(font-lock-add-keywords 'c-mode
-			`((,(concat
-			     "\\<\\([_a-zA-Z0-9]*\\)\\>" ; Function name
-			     "(")                        ; Paren for function invocation
-			   1 'font-lock-function-name-face)))
+(mapc (lambda (mode)
+        (font-lock-add-keywords
+         mode
+         `((,(concat
+	      "\\<\\([_a-zA-Z0-9]*\\)\\>" ; Function name
+	      "(")                        ; Paren for function invocation
+	    1 'font-lock-function-name-face))))
+      '(c-mode c++-mode))
 
 ;; Struct member assignment
-(font-lock-add-keywords 'c-mode
-			`((,(concat
-			     "[[:space:]]\\."                  ; Whitespace followed by period
-			     "\\([[:alpha:]][[:alnum:]_]*\\)") ; Member name
-			   1 'font-lock-variable-name-face)))
+(mapc (lambda (mode)
+        (font-lock-add-keywords
+         mode
+         `((,(concat
+	      "[[:space:]]\\."                  ; Whitespace followed by period
+	      "\\([[:alpha:]][[:alnum:]_]*\\)") ; Member name
+	    1 'font-lock-variable-name-face))))
+      '(c-mode c++-mode))
 
 ;; Non-digit array index
-(font-lock-add-keywords 'c-mode
-			`((,(concat
-			     "\\["                ; Opening bracket
-			     "\\([[:alnum:]]+\\)" ; Index
-			     "\\]")               ; Closing bracket
-			     1 'font-lock-constant-face)))
+(mapc (lambda (mode)
+        (font-lock-add-keywords
+         mode
+         `((,(concat
+	      "\\["                ; Opening bracket
+	      "\\([[:alnum:]]+\\)" ; Index
+	      "\\]")               ; Closing bracket
+	    1 'font-lock-constant-face))))
+      '(c-mode c++-mode))
 
 ;; Digits
-(font-lock-add-keywords 'c-mode
-			`((, "\\<[[:digit:]]+\\>" 0 'font-lock-constant-face)))
+(mapc (lambda (mode)
+        (font-lock-add-keywords
+         mode
+         `((, "\\<[[:digit:]]+\\>" 0 'font-lock-constant-face))))
+      '(c-mode c++-mode))
 
 ;; Member selection via object name
-(font-lock-add-keywords 'c-mode
-			`((,(concat
-			     "\\."                 ; period
-			     "\\([[:alnum:]_]+\\)" ; member name
-			     "[^h>]")              ; don't catch header files
-			   1 'font-lock-variable-name-face)))
+(mapc (lambda (mode)
+        (font-lock-add-keywords
+         mode
+         `((,(concat
+	      "\\."                 ; period
+	      "\\([[:alnum:]_]+\\)" ; member name
+	      "[^h>]")              ; don't catch header files
+	    1 'font-lock-variable-name-face))))
+      '(c-mode c++-mode))
+
 
 ;; Member selection via pointer
-(font-lock-add-keywords 'c-mode
-			`((,(concat
-			     "->"                   ; arrow
-			     "\\([[:alnum:]_]+\\)") ; member name
-			   1 'font-lock-variable-name-face)))
+(mapc (lambda (mode)
+        (font-lock-add-keywords
+         mode
+         `((,(concat
+	      "->"                   ; arrow
+	      "\\([[:alnum:]_]+\\)") ; member name
+	    1 'font-lock-variable-name-face))))
+      '(c-mode c++-mode))
 
 ;; Address
-(font-lock-add-keywords 'c-mode
-			`((,(concat
-			     "\\(&\\)"      ; Ampersand
-			     "[[:alpha:]]") ; Address object
-			   1 'font-lock-keyword-face)))
+(mapc (lambda (mode)
+        (font-lock-add-keywords
+         mode
+         `((,(concat
+	      "\\(&\\)"      ; Ampersand
+	      "[[:alpha:]]") ; Address object
+	    1 'font-lock-keyword-face))))
+      '(c-mode c++-mode))
 
 ;; switch to auto-fill-mode automatically when opening a .tex file
 (add-hook 'LaTeX-mode-hook
