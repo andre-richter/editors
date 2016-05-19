@@ -57,7 +57,7 @@
 ;; Use linux kernel style
 (setq c-default-style "linux")
 
-;; Various add-ons for C syntax highlighting
+;; Various add-ons for C/C++ syntax highlighting
 ;;
 ;; Function calls
 (mapc (lambda (mode)
@@ -128,6 +128,13 @@
 	      "[[:alpha:]]") ; Address object
 	    1 'font-lock-keyword-face))))
       '(c-mode c++-mode))
+
+;; Digits
+(mapc (lambda (mode)
+        (font-lock-add-keywords
+         mode
+         `((, "\\<nullptr\\>" 0 'font-lock-constant-face))))
+      '(c++-mode))
 
 ;; switch to auto-fill-mode automatically when opening a .tex file
 (add-hook 'LaTeX-mode-hook
