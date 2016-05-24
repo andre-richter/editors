@@ -13,8 +13,11 @@
 ;; Shows column numbers
 (column-number-mode 1)
 
-;; Show line Numbers
+;; Show line numbers...
 (global-linum-mode 1)
+
+;; ...but not in speedbar
+(add-hook 'speedbar-mode-hook (lambda () (linum-mode -1)))
 
 ;; Disable all version control
 (setq vc-handled-backends nil)
@@ -286,3 +289,7 @@ and you can reconfigure the compile args."
 
 ;; Semantic mode for helm
 (semantic-mode 1)
+
+;; Open sr-speedbar
+(add-hook 'speedbar-load-hook (lambda () (require 'semantic/sb)))
+(global-set-key (kbd "C-c s") 'sr-speedbar-open)
