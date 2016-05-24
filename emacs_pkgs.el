@@ -16,3 +16,4 @@
 (package-install 'irony)
 (package-install 'company-irony)
 (package-install 'company-irony-c-headers)
+(package-install 'helm)
