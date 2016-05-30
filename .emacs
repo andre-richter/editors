@@ -147,7 +147,7 @@
 
 ;; LaTeX spacing
 (defun latex-spaces-only ()
-  (setq LaTeX-indent-level 8)
+  (setq LaTeX-indent-level 4)
   (setq LaTeX-item-indent -2))
 (add-hook 'LaTeX-mode-hook 'latex-spaces-only)
 
