@@ -19,3 +19,4 @@
 (package-install 'helm)
 (package-install 'sr-speedbar)
 (package-install 'multiple-cursors)
+(package-install 'markdown-mode)

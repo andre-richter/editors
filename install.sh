@@ -7,15 +7,15 @@
 ################
 # Atom
 ################
-cp -avr .atom ~/
-echo ""
+# cp -avr .atom ~/
+# echo ""
 
-if ! [[ -x "$(command -v apm)" ]]; then
-  echo "Atom packet manager (apm) not found. Is it installed?" >&2
-  exit
-fi
+# if ! [[ -x "$(command -v apm)" ]]; then
+#   echo "Atom packet manager (apm) not found. Is it installed?" >&2
+#   exit
+# fi
 
-apm install autocomplete-paths
+# apm install autocomplete-paths
 
 ################
 # Emacs
