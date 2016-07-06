@@ -140,10 +140,13 @@
       '(c++-mode))
 
 ;; switch to auto-fill-mode automatically when opening a .tex file
+;; and load reftex mode
+(setq reftex-plug-into-AUCTeX t)
 (add-hook 'LaTeX-mode-hook
 	  '(lambda()
-	     ;(turn-on-auto-fil)lem
-	     (setq fill-column 80)))
+	     (reftex-mode t)
+	     (setq fill-column 80)
+	     ))
 
 ;; LaTeX spacing
 (defun latex-spaces-only ()
@@ -302,3 +305,5 @@ and you can reconfigure the compile args."
 (global-set-key (kbd "C->") 'mc/mark-next-like-this)
 (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
 (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
+
+'(reftex-use-external-file-finders t)
