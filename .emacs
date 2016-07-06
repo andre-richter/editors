@@ -148,6 +148,16 @@
 	     (setq fill-column 80)
 	     ))
 
+;; add make file as option to TeX commands
+(eval-after-load "tex"
+  '(add-to-list 'TeX-command-list '("Make" "make" TeX-run-command nil t)))
+
+;; correlation between pdf viewer and emacs sources
+(custom-set-variables
+ '(TeX-source-correlate-mode t)
+ '(TeX-source-correlate-start-server t)
+ )
+
 ;; LaTeX spacing
 (defun latex-spaces-only ()
   (setq LaTeX-indent-level 4)
