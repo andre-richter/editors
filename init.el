@@ -1,3 +1,8 @@
+;; Loading files
+(let ((default-directory  "~/.emacs.d/lisp/"))
+  (normal-top-level-add-to-load-path '("."))
+  (normal-top-level-add-subdirs-to-load-path))
+
 ;; Font size
 (set-face-attribute 'default nil :height 140)
 
@@ -20,7 +25,7 @@
 (add-hook 'speedbar-mode-hook (lambda () (linum-mode -1)))
 
 ;; Disable all version control
-(setq vc-handled-backends nil)
+;; (setq vc-handled-backends nil)
 
 ;; Default windows size
 (if window-system
@@ -156,7 +161,11 @@
 (custom-set-variables
  '(TeX-source-correlate-mode t)
  '(TeX-source-correlate-start-server t)
+ '(reftex-toc-split-windows-horizontally t)
  )
+
+'(reftex-use-external-file-finders t)
+(setq reftex-ref-macro-prompt nil)
 
 ;; LaTeX spacing
 (defun latex-spaces-only ()
@@ -316,4 +325,9 @@ and you can reconfigure the compile args."
 (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
 (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
 
-'(reftex-use-external-file-finders t)
+;; Auto close parens
+(electric-pair-mode 1)
+
+;; Crystal lang
+(load-library "crystal-mode")
+ (add-to-list 'auto-mode-alist '("\\.cr\\'" . crystal-mode))

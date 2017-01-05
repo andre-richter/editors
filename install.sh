@@ -20,7 +20,11 @@
 ################
 # Emacs
 ################
-cp .emacs ~/
+mkdir ~/.emacs.d
+cp init.el ~/.emacs.d/
+mkdir ~/.emacs.d/lisp
+wget -P ~/.emacs.d/lisp https://raw.githubusercontent.com/TechMagister/emacs-crystal-mode/master/crystal-mode.el
+
 echo ""
 
 if ! [[ -x "$(command -v emacs)" ]]; then
