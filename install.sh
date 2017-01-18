@@ -45,3 +45,8 @@ rm -rf /tmp/irony
 # GPG
 ################
 cp gpg.conf gpg-agent.conf ~/
+
+################
+# Git
+################
+cp .gitconfig ~/
