@@ -40,3 +40,8 @@ mkdir /tmp/irony
 cd /tmp/irony
 cmake -DCMAKE_INSTALL_PREFIX\=~/.emacs.d/irony/ `find ~/.emacs.d/elpa -maxdepth 1 -type d -name 'irony*'`/server && cmake --build . --use-stderr --config Release --target install
 rm -rf /tmp/irony
+
+################
+# GPG
+################
+cp gpg.conf gpg-agent.conf ~/
