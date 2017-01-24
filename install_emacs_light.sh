@@ -12,4 +12,4 @@ if ! [[ -x "$(command -v emacs)" ]]; then
   exit
 fi
 
-./emacs_pkgs.el
+./emacs_pkgs_light.el
