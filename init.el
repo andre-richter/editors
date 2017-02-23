@@ -218,12 +218,6 @@ and you can reconfigure the compile args."
       verilog-indent-begin-after-if    t
       verilog-auto-lineup              '(all))
 
-;; In verliog mode, never use tabs to indent, only spaces
-(defun verilog-spaces-only ()
-  (setq indent-tabs-mode nil)
-  (setq tab-width 4))
-(add-hook 'verilog-mode-hook 'verilog-spaces-only)
-
 ;; Align with spaces only when doing align-regexp
 (defadvice align-regexp (around align-regexp-with-spaces)
   "Never use tabs for alignment."
@@ -331,3 +325,10 @@ and you can reconfigure the compile args."
 ;; Crystal lang
 (load-library "crystal-mode")
  (add-to-list 'auto-mode-alist '("\\.cr\\'" . crystal-mode))
+
+;; In some modes, never use tabs to indent, only spaces
+(defun spaces-only ()
+  (setq indent-tabs-mode nil)
+  (setq tab-width 4))
+(add-hook 'verilog-mode-hook 'spaces-only)
+(add-hook 'dockerfile-mode-hook 'spaces-only)

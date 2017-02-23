@@ -14,3 +14,4 @@
 (package-install 'helm)
 (package-install 'multiple-cursors)
 (package-install 'markdown-mode)
+(package-install 'dockerfile-mode)
