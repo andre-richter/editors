@@ -21,3 +21,4 @@
 (package-install 'multiple-cursors)
 (package-install 'markdown-mode)
 (package-install 'dockerfile-mode)
+(package-install 'dts-mode)
