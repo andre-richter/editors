@@ -17,6 +17,7 @@
 (package-install 'company-irony)
 (package-install 'company-irony-c-headers)
 (package-install 'helm)
+(package-install 'helm-gtags)
 (package-install 'sr-speedbar)
 (package-install 'multiple-cursors)
 (package-install 'markdown-mode)
