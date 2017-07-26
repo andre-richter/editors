@@ -23,3 +23,5 @@
 (package-install 'markdown-mode)
 (package-install 'dockerfile-mode)
 (package-install 'dts-mode)
+(package-install 'rust-mode)
+(package-install 'toml-mode)
