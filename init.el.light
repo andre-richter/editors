@@ -286,3 +286,15 @@ and you can reconfigure the compile args."
 
 ;; Auto close parens
 (electric-pair-mode 1)
+
+;; Crystal lang
+(load-library "crystal-mode")
+(add-to-list 'auto-mode-alist '("\\.cr\\'" . crystal-mode))
+
+;; In some modes, never use tabs to indent, only spaces
+(defun spaces-only ()
+  (setq indent-tabs-mode nil)
+  (setq tab-width 4))
+(add-hook 'verilog-mode-hook 'spaces-only)
+(add-hook 'dockerfile-mode-hook 'spaces-only)
+(add-hook 'nasm-mode-hook 'spaces-only)

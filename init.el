@@ -345,7 +345,7 @@ and you can reconfigure the compile args."
 
 ;; Crystal lang
 (load-library "crystal-mode")
- (add-to-list 'auto-mode-alist '("\\.cr\\'" . crystal-mode))
+(add-to-list 'auto-mode-alist '("\\.cr\\'" . crystal-mode))
 
 ;; In some modes, never use tabs to indent, only spaces
 (defun spaces-only ()
@@ -353,3 +353,4 @@ and you can reconfigure the compile args."
   (setq tab-width 4))
 (add-hook 'verilog-mode-hook 'spaces-only)
 (add-hook 'dockerfile-mode-hook 'spaces-only)
+(add-hook 'nasm-mode-hook 'spaces-only)
