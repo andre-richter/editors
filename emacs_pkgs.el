@@ -25,3 +25,4 @@
 (package-install 'dts-mode)
 (package-install 'rust-mode)
 (package-install 'toml-mode)
+(package-install 'nasm-mode)
