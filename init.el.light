@@ -291,10 +291,13 @@ and you can reconfigure the compile args."
 (load-library "crystal-mode")
 (add-to-list 'auto-mode-alist '("\\.cr\\'" . crystal-mode))
 
+;; NASM mode
+(add-hook 'nasm-mode-hook
+	  (lambda () (setq-default nasm-basic-offset 4)))
+
 ;; In some modes, never use tabs to indent, only spaces
 (defun spaces-only ()
   (setq indent-tabs-mode nil)
   (setq tab-width 4))
 (add-hook 'verilog-mode-hook 'spaces-only)
 (add-hook 'dockerfile-mode-hook 'spaces-only)
-(add-hook 'nasm-mode-hook 'spaces-only)
