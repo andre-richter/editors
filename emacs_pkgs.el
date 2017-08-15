@@ -26,3 +26,4 @@
 (package-install 'rust-mode)
 (package-install 'toml-mode)
 (package-install 'nasm-mode)
+(package-install 'json-mode)
