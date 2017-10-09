@@ -18,6 +18,9 @@
 ;; Show line numbers...
 (global-linum-mode 1)
 
+;; Add a single space between line number and buffer
+(setq linum-format "%d ")
+
 ;; Disable all version control
 ;; (setq vc-handled-backends nil)
 
@@ -212,12 +215,6 @@ and you can reconfigure the compile args."
       verilog-indent-begin-after-if    t
       verilog-auto-lineup              '(all))
 
-;; In verliog mode, never use tabs to indent, only spaces
-(defun verilog-spaces-only ()
-  (setq indent-tabs-mode nil)
-  (setq tab-width 4))
-(add-hook 'verilog-mode-hook 'verilog-spaces-only)
-
 ;; Align with spaces only when doing align-regexp
 (defadvice align-regexp (around align-regexp-with-spaces)
   "Never use tabs for alignment."
@@ -301,3 +298,4 @@ and you can reconfigure the compile args."
   (setq tab-width 4))
 (add-hook 'verilog-mode-hook 'spaces-only)
 (add-hook 'dockerfile-mode-hook 'spaces-only)
+(add-hook 'asm-mode-hook 'spaces-only)
