@@ -12,6 +12,9 @@
 ;; No toolbar
 (tool-bar-mode -1)
 
+;; No menubar
+(menu-bar-mode -1)
+
 ;; Shows matching parenthesis
 (show-paren-mode 1)
 
