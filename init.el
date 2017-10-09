@@ -360,3 +360,4 @@ and you can reconfigure the compile args."
   (setq tab-width 4))
 (add-hook 'verilog-mode-hook 'spaces-only)
 (add-hook 'dockerfile-mode-hook 'spaces-only)
+(add-hook 'asm-mode-hook 'spaces-only)
