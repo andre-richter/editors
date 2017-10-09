@@ -24,6 +24,9 @@
 ;; ...but not in speedbar
 (add-hook 'speedbar-mode-hook (lambda () (linum-mode -1)))
 
+;; Add a single space between line number and buffer
+(setq linum-format "%d ")
+
 ;; Disable all version control
 ;; (setq vc-handled-backends nil)
 
