@@ -4,7 +4,7 @@
 # Emacs
 ################
 mkdir ~/.emacs.d
-cp init.el.light ~/.emacs.d/init.el
+ln -s ~/repos/editors/init.el.light ~/.emacs.d/init.el
 mkdir ~/.emacs.d/lisp
 
 if ! [[ -x "$(command -v emacs)" ]]; then

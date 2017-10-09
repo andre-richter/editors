@@ -21,7 +21,7 @@
 # Emacs
 ################
 mkdir ~/.emacs.d
-cp init.el ~/.emacs.d/
+ln -s ~/repos/editors/init.el ~/.emacs.d/init.el
 mkdir ~/.emacs.d/lisp
 wget -P ~/.emacs.d/lisp https://raw.githubusercontent.com/TechMagister/emacs-crystal-mode/master/crystal-mode.el
 
