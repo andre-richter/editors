@@ -6,6 +6,9 @@
 ;; Font size
 (set-face-attribute 'default nil :height 140)
 
+;; Scroll line by line when reaching window edges with arrow keys
+(setq scroll-step 1 scroll-conservatively 10000)
+
 ;; Mouse in terminal mode
 ;; https://gist.github.com/ftrain/8443721
 (require 'xt-mouse)
