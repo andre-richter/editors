@@ -27,3 +27,4 @@
 (package-install 'toml-mode)
 (package-install 'nasm-mode)
 (package-install 'json-mode)
+(package-install 'xclip)

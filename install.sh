@@ -33,7 +33,7 @@ if ! [[ -x "$(command -v emacs)" ]]; then
 fi
 
 echo "Install dependencies:"
-sudo apt-get install libclang-dev cmake
+sudo apt-get install libclang-dev cmake xclip
 ./emacs_pkgs.el
 
 mkdir /tmp/irony

@@ -6,6 +6,11 @@
 ;; Font size
 (set-face-attribute 'default nil :height 140)
 
+;; Integrate clipboard with X11
+(add-to-list 'load-path "~/.emacs.d/elpa/xclip-1.3/")
+(require 'xclip)
+(xclip-mode 1)
+
 ;; Scroll line by line when reaching window edges with arrow keys
 (setq scroll-step 1 scroll-conservatively 10000)
 
