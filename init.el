@@ -267,37 +267,6 @@ and you can reconfigure the compile args."
     ad-do-it))
 (ad-activate 'align-regexp)
 
-(add-hook 'after-init-hook 'global-company-mode)
-
-(add-hook 'c++-mode-hook 'irony-mode)
-(add-hook 'c-mode-hook 'irony-mode)
-(add-hook 'objc-mode-hook 'irony-mode)
-
-;; replace the `completion-at-point' and `complete-symbol' bindings in
-;; irony-mode's buffers by irony-mode's function
-(defun my-irony-mode-hook ()
-  (define-key irony-mode-map [remap completion-at-point]
-    'irony-completion-at-point-async)
-  (define-key irony-mode-map [remap complete-symbol]
-    'irony-completion-at-point-async))
-(add-hook 'irony-mode-hook 'my-irony-mode-hook)
-(add-hook 'irony-mode-hook 'irony-cdb-autosetup-compile-options)
-
-(eval-after-load 'company
-  '(add-to-list 'company-backends 'company-irony))
-
-(eval-after-load 'company
-  '(add-to-list 'company-backends 'company-files))
-
-(require 'company-irony-c-headers)
-;; Load with `irony-mode` as a grouped backend
-(eval-after-load 'company
-  '(add-to-list
-    'company-backends '(company-irony-c-headers company-irony)))
-
-(global-set-key (kbd "C-c f") 'company-files)
-(global-set-key (kbd "C-c c") 'company-complete)
-
 ;;
 ;; helm stuff
 ;;
@@ -385,10 +354,6 @@ and you can reconfigure the compile args."
 ;; Auto close parens
 (electric-pair-mode 1)
 
-;; Crystal lang
-(load-library "crystal-mode")
-(add-to-list 'auto-mode-alist '("\\.cr\\'" . crystal-mode))
-
 ;; NASM mode
 (add-hook 'nasm-mode-hook
 	  (lambda () (setq-default nasm-basic-offset 4)))
@@ -400,3 +365,46 @@ and you can reconfigure the compile args."
 (add-hook 'verilog-mode-hook 'spaces-only)
 (add-hook 'dockerfile-mode-hook 'spaces-only)
 (add-hook 'asm-mode-hook 'spaces-only)
+
+;;
+;; Company mode
+;;
+(add-hook 'after-init-hook 'global-company-mode)
+
+(add-hook 'c++-mode-hook 'irony-mode)
+(add-hook 'c-mode-hook 'irony-mode)
+(add-hook 'objc-mode-hook 'irony-mode)
+
+;; replace the `completion-at-point' and `complete-symbol' bindings in
+;; irony-mode's buffers by irony-mode's function
+(defun my-irony-mode-hook ()
+  (define-key irony-mode-map [remap completion-at-point]
+    'irony-completion-at-point-async)
+  (define-key irony-mode-map [remap complete-symbol]
+    'irony-completion-at-point-async))
+(add-hook 'irony-mode-hook 'my-irony-mode-hook)
+(add-hook 'irony-mode-hook 'irony-cdb-autosetup-compile-options)
+
+(eval-after-load 'company
+  '(add-to-list 'company-backends 'company-irony))
+
+(eval-after-load 'company
+  '(add-to-list 'company-backends 'company-files))
+
+(require 'company-irony-c-headers)
+;; Load with `irony-mode` as a grouped backend
+(eval-after-load 'company
+  '(add-to-list
+    'company-backends '(company-irony-c-headers company-irony)))
+
+(global-set-key (kbd "C-c f") 'company-files)
+(global-set-key (kbd "C-c c") 'company-complete)
+
+;; Rust support
+(add-hook 'rust-mode-hook #'racer-mode)
+(add-hook 'racer-mode-hook #'eldoc-mode)
+(add-hook 'racer-mode-hook #'company-mode)
+
+(require 'rust-mode)
+(define-key rust-mode-map (kbd "TAB") #'company-indent-or-complete-common)
+(setq company-tooltip-align-annotations t)

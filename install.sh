@@ -23,7 +23,6 @@
 mkdir ~/.emacs.d
 ln -s ~/repos/editors/init.el ~/.emacs.d/init.el
 mkdir ~/.emacs.d/lisp
-wget -P ~/.emacs.d/lisp https://raw.githubusercontent.com/TechMagister/emacs-crystal-mode/master/crystal-mode.el
 
 echo ""
 
@@ -33,7 +32,10 @@ if ! [[ -x "$(command -v emacs)" ]]; then
 fi
 
 echo "Install dependencies:"
-sudo apt-get install libclang-dev cmake xclip
+rustup component add rust-src
+cargo install racer
+
+sudo apt-get install clang libclang-dev global cmake xclip
 ./emacs_pkgs.el
 
 mkdir /tmp/irony

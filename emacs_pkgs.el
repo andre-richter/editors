@@ -14,6 +14,7 @@
 (package-install 'rubocop)
 (package-install 'company)
 (package-install 'irony)
+(package-install 'company)
 (package-install 'company-irony)
 (package-install 'company-irony-c-headers)
 (package-install 'helm)
@@ -28,3 +29,4 @@
 (package-install 'nasm-mode)
 (package-install 'json-mode)
 (package-install 'xclip)
+(package-install 'racer)
