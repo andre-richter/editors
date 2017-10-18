@@ -32,9 +32,13 @@ if ! [[ -x "$(command -v emacs)" ]]; then
 fi
 
 echo "Install dependencies:"
-rustup component add rust-src
-cargo install racer
 
+# Rust
+curl https://sh.rustup.rs -sSf | sh -s -- --default-toolchain nightly
+rustup component add rust-src
+cargo install racer rustfmt-nightly
+
+# C/C++
 sudo apt-get install clang libclang-dev global cmake xclip
 ./emacs_pkgs.el
 
