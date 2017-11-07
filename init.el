@@ -39,23 +39,23 @@
 (setq mouse-wheel-follow-mouse 't)
 
 ;; Scroll only a single line per Mouse wheel turn
-;; (defvar alternating-scroll-down-next t)
-;; (defvar alternating-scroll-up-next t)
+(defvar alternating-scroll-down-next t)
+(defvar alternating-scroll-up-next t)
 
-;; (defun alternating-scroll-down-line ()
-;;   (interactive "@")
-;;   (when alternating-scroll-down-next
-;;     (scroll-down-line))
-;;   (setq alternating-scroll-down-next (not alternating-scroll-down-next)))
+(defun alternating-scroll-down-line ()
+  (interactive "@")
+  (when alternating-scroll-down-next
+    (scroll-down-line))
+  (setq alternating-scroll-down-next (not alternating-scroll-down-next)))
 
-;; (defun alternating-scroll-up-line ()
-;;   (interactive "@")
-;;   (when alternating-scroll-up-next
-;;     (scroll-up-line))
-;;   (setq alternating-scroll-up-next (not alternating-scroll-up-next)))
+(defun alternating-scroll-up-line ()
+  (interactive "@")
+  (when alternating-scroll-up-next
+    (scroll-up-line))
+  (setq alternating-scroll-up-next (not alternating-scroll-up-next)))
 
-;; (global-set-key (kbd "<mouse-4>") 'alternating-scroll-down-line)
-;; (global-set-key (kbd "<mouse-5>") 'alternating-scroll-up-line)
+(global-set-key (kbd "<mouse-4>") 'alternating-scroll-down-line)
+(global-set-key (kbd "<mouse-5>") 'alternating-scroll-up-line)
 
 ;; No startup message
 (setq inhibit-startup-message t)
