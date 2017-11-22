@@ -10,6 +10,5 @@
 |C-c h i|helm-semantic (File outline)|
 |C-c s|open sr-speedbar|
 |C-S-c C-S-c|mc/edit-lines|
-|C->|mc/mark-next-like-this|
-|C-<|mc/mark-previous-like-this|
-|C-c C-<|mc/mark-all-like-this|
+|C-q|mc/mark-next-like-this|
+|C-c C-q|mc/mark-all-like-this|
