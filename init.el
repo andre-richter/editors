@@ -21,7 +21,7 @@
 (set-face-attribute 'default nil :height 140)
 
 ;; Integrate clipboard with X11
-(add-to-list 'load-path "~/.emacs.d/elpa/xclip-1.3/")
+(add-to-list 'load-path "~/.emacs.d/elpa/xclip-1.4/")
 (require 'xclip)
 (xclip-mode 1)
 
@@ -61,7 +61,7 @@
 (setq inhibit-startup-message t)
 
 ;; No toolbar
-(tool-bar-mode -1)
+;; (tool-bar-mode -1)
 
 ;; No menubar
 (menu-bar-mode -1)
