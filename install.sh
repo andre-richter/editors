@@ -4,10 +4,6 @@
 # Tested only with Ubuntu 16.04 Desktop
 #
 
-mkdir ~/.emacs.d
-ln -s ~/repos/editors/init.el ~/.emacs.d/init.el
-mkdir ~/.emacs.d/lisp
-
 echo ""
 
 if ! [[ -x "$(command -v emacs)" ]]; then
@@ -15,12 +11,19 @@ if ! [[ -x "$(command -v emacs)" ]]; then
   exit
 fi
 
+rm -rf ~/.emacs.d
+rm ~/.emacs.d/init.el
+
+mkdir ~/.emacs.d
+ln -s ~/repos/editors/init.el ~/.emacs.d/init.el
+mkdir ~/.emacs.d/lisp
+
 echo "Install dependencies:"
 
 # Rust
 curl https://sh.rustup.rs -sSf | sh -s -- --default-toolchain nightly
-rustup component add rust-src
-cargo install racer
+$HOME/.cargo/bin/rustup component add rust-src
+$HOME/.cargo/bin/cargo install racer
 
 # C/C++
 sudo apt-get install clang libclang-dev global cmake xclip
