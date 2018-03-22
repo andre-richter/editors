@@ -24,6 +24,7 @@ echo "Install dependencies:"
 curl https://sh.rustup.rs -sSf | sh -s -- --default-toolchain nightly
 $HOME/.cargo/bin/rustup component add rust-src
 $HOME/.cargo/bin/cargo install racer
+$HOME/.cargo/bin/rustup component add rustfmt-preview
 
 # C/C++
 sudo apt-get install clang libclang-dev global cmake xclip
