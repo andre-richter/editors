@@ -423,3 +423,10 @@ and you can reconfigure the compile args."
 (require 'rust-mode)
 (define-key rust-mode-map (kbd "TAB") #'company-indent-or-complete-common)
 (setq company-tooltip-align-annotations t)
+
+;; Adjust auto-fill-mode for Markdown
+(defun my-markdown-mode-hook ()
+       (auto-fill-mode t)
+       (set-fill-column 80))
+
+(add-hook 'markdown-mode-hook 'my-markdown-mode-hook)
