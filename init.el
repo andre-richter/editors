@@ -122,6 +122,9 @@
 ;; Use linux kernel style
 (setq c-default-style "linux")
 
+;; For c++, override with a guess
+(add-hook 'c++-mode-hook 'c-guess)
+
 ;; Various add-ons for C/C++ syntax highlighting
 ;;
 ;; Function calls
