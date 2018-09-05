@@ -207,7 +207,6 @@
 (add-hook 'LaTeX-mode-hook
 	  '(lambda()
 	     (reftex-mode t)
-	     (setq fill-column 80)
 	     ))
 
 ;; add make file as option to TeX commands
@@ -426,7 +425,8 @@ and you can reconfigure the compile args."
 
 ;; Adjust auto-fill-mode for Markdown
 (defun my-markdown-mode-hook ()
-       (auto-fill-mode t)
-       (set-fill-column 80))
+       (auto-fill-mode t))
 
 (add-hook 'markdown-mode-hook 'my-markdown-mode-hook)
+
+(setq-default fill-column 80)
