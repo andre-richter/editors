@@ -21,7 +21,7 @@
 (set-face-attribute 'default nil :height 140)
 
 ;; Integrate clipboard with X11
-(add-to-list 'load-path "~/.emacs.d/elpa/xclip-1.4/")
+(add-to-list 'load-path "~/.emacs.d/elpa/xclip-1.7/")
 (require 'xclip)
 (xclip-mode 1)
 
@@ -361,9 +361,9 @@ and you can reconfigure the compile args."
 
 (global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
 
-(global-set-key (kbd "C-q") 'mc/mark-next-like-this)
+(global-set-key (kbd "C-t") 'mc/mark-next-like-this)
 ;(global-set-key (kbd "C-q") 'mc/mark-previous-like-this)
-(global-set-key (kbd "C-c C-q") 'mc/mark-all-like-this)
+(global-set-key (kbd "C-c C-t") 'mc/mark-all-like-this)
 
 ;; Auto close parens
 (electric-pair-mode 1)
@@ -430,3 +430,34 @@ and you can reconfigure the compile args."
 (add-hook 'markdown-mode-hook 'my-markdown-mode-hook)
 
 (setq-default fill-column 80)
+
+
+(defun c-lineup-arglist-tabs-only (ignored)
+  "Line up argument lists by tabs, not spaces"
+  (let* ((anchor (c-langelem-pos c-syntactic-element))
+	 (column (c-langelem-2nd-pos c-syntactic-element))
+	 (offset (- (1+ column) anchor))
+	 (steps (floor offset c-basic-offset)))
+    (* (max steps 1)
+       c-basic-offset)))
+
+(add-hook 'c-mode-common-hook
+	  (lambda ()
+	    ;; Add kernel style
+	    (c-add-style
+	     "linux-tabs-only"
+	     '("linux" (c-offsets-alist
+			(arglist-cont-nonempty
+			 c-lineup-gcc-asm-reg
+			 c-lineup-arglist-tabs-only))))))
+
+(add-hook 'c-mode-hook
+	  (lambda ()
+	    (let ((filename (buffer-file-name)))
+	      ;; Enable kernel mode for the appropriate files
+	      (when (and filename
+			 (string-match (expand-file-name "/opt/git")
+				       filename))
+		(setq indent-tabs-mode t)
+		(setq show-trailing-whitespace t)
+		(c-set-style "linux-tabs-only")))))
