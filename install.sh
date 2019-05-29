@@ -35,3 +35,6 @@ mkdir /tmp/irony
 cd /tmp/irony
 cmake -DCMAKE_INSTALL_PREFIX\=~/.emacs.d/irony/ `find ~/.emacs.d/elpa -maxdepth 1 -type d -name 'irony*'`/server && cmake --build . --use-stderr --config Release --target install
 rm -rf /tmp/irony
+
+echo "Remember to install One Dark Pro theme for vscode"
+ln -s ~/repos/editors/vscode_settings.json ~/.config/Code/User/settings.json

@@ -430,7 +430,7 @@ and you can reconfigure the compile args."
 (add-hook 'markdown-mode-hook 'my-markdown-mode-hook)
 
 (setq-default fill-column 80)
-
+(setq-default show-trailing-whitespace t)
 
 (defun c-lineup-arglist-tabs-only (ignored)
   "Line up argument lists by tabs, not spaces"
