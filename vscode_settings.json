@@ -1,0 +1,61 @@
+{
+    "files.trimTrailingWhitespace": true,
+    "telemetry.enableTelemetry": false,
+    "telemetry.enableCrashReporter": false,
+    "window.zoomLevel": 0,
+    "C_Cpp.updateChannel": "Insiders",
+    //"workbench.editor.enablePreview": false,
+    //"workbench.editor.enablePreviewFromQuickOpen": false,
+    "workbench.colorTheme": "One Dark Pro",
+    "workbench.colorCustomizations":{
+        "editor.background": "#202020",
+    },
+    "editor.tokenColorCustomizations": {
+        "textMateRules": [
+            {
+                "scope": ["comment", "punctuation.definition.comment"],
+                "settings": {
+                    "foreground": "#2AA198",
+                }
+            },
+            {
+                "scope": ["keyword", "keyword.control", "keyword.operator.new", "storage.modifier",],
+                "settings": {
+                    "foreground": "#e5c07bff"
+                }
+            },
+            {
+                "scope": "entity.name.type.namespace",
+                "settings": {
+                    "foreground": "#ffa033"
+                }
+            },
+            {
+                "scope": ["storage.type"],
+                "settings": {
+                    "foreground": "#82A6DF"
+                }
+            },
+            {
+                "scope": ["keyword.operator.cpp", "keyword.operator.increment.cpp", "keyword.operator.comparison.cpp", "keyword.operator.ternary.cpp", "keyword.operator.logical.cpp"],
+                "settings": {
+                    "foreground": "#ffe01a"
+                }
+            },
+            {
+                "scope": ["keyword.operator.assignment.cpp",],
+                "settings": {
+                    "foreground": "#abb2bf"
+                }
+            },
+            {
+                "scope": "entity.name.function",
+                "settings": {
+                    "foreground": "#cb85e0"
+                }
+            }
+        ]
+    },
+    "workbench.editor.enablePreview": false,
+    "workbench.editor.enablePreviewFromQuickOpen": false
+}
