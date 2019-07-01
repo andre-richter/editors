@@ -4,8 +4,6 @@
     "telemetry.enableCrashReporter": false,
     "window.zoomLevel": 0,
     "C_Cpp.updateChannel": "Insiders",
-    //"workbench.editor.enablePreview": false,
-    //"workbench.editor.enablePreviewFromQuickOpen": false,
     "workbench.colorTheme": "One Dark Pro",
     "workbench.colorCustomizations":{
         "editor.background": "#202020",
