@@ -55,5 +55,8 @@
         ]
     },
     "workbench.editor.enablePreview": false,
-    "workbench.editor.enablePreviewFromQuickOpen": false
+    "workbench.editor.enablePreviewFromQuickOpen": false,
+    "rewrap.wholeComment": false,
+    "editor.fontSize": 14.5,
+    "editor.rulers": [80]
 }

@@ -3,8 +3,8 @@
   (normal-top-level-add-to-load-path '("."))
   (normal-top-level-add-subdirs-to-load-path))
 
-;; In emacs nw mode, CTRL+Backspace produces C-h.  Also, make it
-;; delete, not kill, the last word.
+;; In emacs nw mode, CTRL+Backspace produces C-h. Also, make it delete, not
+;; kill, the last word.
 (defun my-delete-word (arg)
   (interactive "p")
   (delete-region
@@ -19,11 +19,6 @@
 
 ;; Font size
 (set-face-attribute 'default nil :height 140)
-
-;; Integrate clipboard with X11
-(add-to-list 'load-path "~/.emacs.d/elpa/xclip-1.7/")
-(require 'xclip)
-(xclip-mode 1)
 
 ;; Scroll line by line when reaching window edges with arrow keys
 (setq scroll-step 1 scroll-conservatively 10000)
@@ -60,9 +55,6 @@
 ;; No startup message
 (setq inhibit-startup-message t)
 
-;; No toolbar
-;; (tool-bar-mode -1)
-
 ;; No menubar
 (menu-bar-mode -1)
 
@@ -80,9 +72,6 @@
 
 ;; Add a single space between line number and buffer
 (setq linum-format "%d ")
-
-;; Disable all version control
-;; (setq vc-handled-backends nil)
 
 ;; Default windows size
 (if window-system
@@ -113,6 +102,9 @@
 (package-initialize)
 (add-to-list 'package-archives
 	     '("melpa" . "http://melpa.milkbox.net/packages/") t)
+
+;; Integrate clipboard with X11
+(xclip-mode 1)
 
 ;; Load color Theme
 (load-theme 'lush t)
@@ -351,10 +343,6 @@ and you can reconfigure the compile args."
   (define-key helm-gtags-mode-map (kbd "C-c <") 'helm-gtags-previous-history)
   (define-key helm-gtags-mode-map (kbd "C-c >") 'helm-gtags-next-history)
   (define-key helm-gtags-mode-map (kbd "M-,") 'helm-gtags-pop-stack))
-
-;; Open sr-speedbar
-(add-hook 'speedbar-load-hook (lambda () (require 'semantic/sb)))
-(global-set-key (kbd "C-c s") 'sr-speedbar-open)
 
 ;; Multiple cursors settings
 (require 'multiple-cursors)

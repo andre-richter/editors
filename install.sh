@@ -1,9 +1,5 @@
 #!/usr/bin/env bash
 
-#
-# Tested only with Ubuntu 16.04 Desktop
-#
-
 echo ""
 
 if ! [[ -x "$(command -v emacs)" ]]; then
@@ -20,13 +16,6 @@ mkdir ~/.emacs.d/lisp
 
 echo "Install dependencies:"
 
-# Rust
-curl https://sh.rustup.rs -sSf | sh -s -- --default-toolchain nightly
-$HOME/.cargo/bin/rustup component add rust-src
-$HOME/.cargo/bin/cargo install racer
-$HOME/.cargo/bin/cargo install ripgrep
-$HOME/.cargo/bin/rustup component add rustfmt-preview
-
 # C/C++
 sudo apt-get install clang libclang-dev global cmake xclip
 ./emacs_pkgs.el
@@ -36,5 +25,23 @@ cd /tmp/irony
 cmake -DCMAKE_INSTALL_PREFIX\=~/.emacs.d/irony/ `find ~/.emacs.d/elpa -maxdepth 1 -type d -name 'irony*'`/server && cmake --build . --use-stderr --config Release --target install
 rm -rf /tmp/irony
 
+echo "!!!!!!!!"
 echo "Remember to install One Dark Pro theme for vscode"
+echo "!!!!!!!!"
 ln -s ~/repos/editors/vscode_settings.json ~/.config/Code/User/settings.json
+
+# Rust
+echo "Browse to https://rust-lang.github.io/rustup-components-history and put in the newest date string for which clippy is present. e.g. 2019-07-03"
+read version
+curl https://sh.rustup.rs -sSf | sh -s -- --default-toolchain nightly-$version
+$HOME/.cargo/bin/rustup component add      \
+			rust-src           \
+			llvm-tools-preview \
+			rustfmt-preview    \
+			clippy-preview
+
+$HOME/.cargo/bin/cargo install        \
+		       racer          \
+		       cargo-xbuild   \
+		       cargo-binutils \
+		       ripgrep
