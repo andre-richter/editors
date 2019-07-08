@@ -28,9 +28,12 @@ rm -rf /tmp/irony
 echo "!!!!!!!!"
 echo "Remember to install One Dark Pro theme for vscode"
 echo "!!!!!!!!"
+rm ~/.config/Code/User/settings.json
 ln -s ~/repos/editors/vscode_settings.json ~/.config/Code/User/settings.json
 
 # Rust
+rm -rf ~/.cargo
+rm -rf ~/.rustup
 echo "Browse to https://rust-lang.github.io/rustup-components-history and put in the newest date string for which clippy is present. e.g. 2019-07-03"
 read version
 curl https://sh.rustup.rs -sSf | sh -s -- --default-toolchain nightly-$version
