@@ -17,6 +17,12 @@
                 }
             },
             {
+                "scope": ["comment.line.documentation"],
+                "settings": {
+                    "foreground": "#708090",
+                }
+            },
+            {
                 "scope": ["keyword", "keyword.control", "keyword.operator.new", "storage.modifier",],
                 "settings": {
                     "foreground": "#e5c07bff"
@@ -58,5 +64,7 @@
     "workbench.editor.enablePreviewFromQuickOpen": false,
     "rewrap.wholeComment": false,
     "editor.fontSize": 14.5,
-    "editor.rulers": [80]
+    "editor.rulers": [
+        80
+    ],
 }
