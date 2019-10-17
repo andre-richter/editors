@@ -67,4 +67,11 @@
     "editor.rulers": [
         80
     ],
+    "ruby.format": "rubocop",
+    "ruby.intellisense": "rubyLocate",
+    "ruby.useLanguageServer": true,
+    "ruby.codeCompletion": "rcodetools",
+    "ruby.lint": {
+        "rubocop": true
+    },
 }
