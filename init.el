@@ -207,10 +207,19 @@
 
 ;; correlation between pdf viewer and emacs sources
 (custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
  '(TeX-source-correlate-mode t)
  '(TeX-source-correlate-start-server t)
- '(reftex-toc-split-windows-horizontally t)
- )
+ '(helm-gtags-auto-update t)
+ '(helm-gtags-ignore-case t)
+ '(helm-gtags-path-style (quote relative))
+ '(package-selected-packages
+   (quote
+    (cmake-mode yaml-mode xclip toml-mode sr-speedbar rubocop racer nasm-mode multiple-cursors markdown-mode lush-theme json-mode helm-gtags dts-mode dockerfile-mode company-irony-c-headers company-irony)))
+ '(reftex-toc-split-windows-horizontally t))
 
 '(reftex-use-external-file-finders t)
 (setq reftex-ref-macro-prompt nil)
@@ -329,10 +338,7 @@ and you can reconfigure the compile args."
 (add-hook 'asm-mode-hook 'helm-gtags-mode)
 
 ;; customize
-(custom-set-variables
- '(helm-gtags-path-style 'relative)
- '(helm-gtags-ignore-case t)
- '(helm-gtags-auto-update t))
+
 
 ;; key bindings
 (with-eval-after-load 'helm-gtags
@@ -449,3 +455,11 @@ and you can reconfigure the compile args."
 		(setq indent-tabs-mode t)
 		(setq show-trailing-whitespace t)
 		(c-set-style "linux-tabs-only")))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
+
+(setq ruby-indent-level 4)
