@@ -1,6 +1,7 @@
 #!/usr/bin/emacs --script
 
 (require 'package)
+;(setq package-check-signature nil)
 (package-initialize)
 (add-to-list 'package-archives
              '("melpa" . "http://melpa.milkbox.net/packages/") t)
@@ -26,6 +27,7 @@
 (package-install 'dts-mode)
 (package-install 'rust-mode)
 (package-install 'toml-mode)
+(package-install 'yaml-mode)
 (package-install 'nasm-mode)
 (package-install 'json-mode)
 (package-install 'xclip)

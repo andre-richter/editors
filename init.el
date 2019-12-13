@@ -207,19 +207,10 @@
 
 ;; correlation between pdf viewer and emacs sources
 (custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
  '(TeX-source-correlate-mode t)
  '(TeX-source-correlate-start-server t)
- '(helm-gtags-auto-update t)
- '(helm-gtags-ignore-case t)
- '(helm-gtags-path-style (quote relative))
- '(package-selected-packages
-   (quote
-    (cmake-mode yaml-mode xclip toml-mode sr-speedbar rubocop racer nasm-mode multiple-cursors markdown-mode lush-theme json-mode helm-gtags dts-mode dockerfile-mode company-irony-c-headers company-irony)))
- '(reftex-toc-split-windows-horizontally t))
+ '(reftex-toc-split-windows-horizontally t)
+ )
 
 '(reftex-use-external-file-finders t)
 (setq reftex-ref-macro-prompt nil)
@@ -243,22 +234,22 @@ With a prefix argument or no last time, this acts like M-x compile,
 and you can reconfigure the compile args."
   (interactive "p")
   (if (not (get-buffer-window "*compilation*"))
-	  (split-window-vertically -10))
+      (split-window-vertically -10))
   (if (and (eq ARG 1) compilation-last-buffer)
-	  (recompile)
-	(call-interactively 'compile)))
+      (recompile)
+    (call-interactively 'compile)))
 
 (global-set-key (kbd "C-c m") 'compile-again)
 
 (setq compilation-finish-functions
-	  (lambda (buf str)
-		(if (null (string-match ".*exited abnormally.*" str))
-			;;no errors, make the compilation window go away in a few seconds
-			(progn
-			  (run-at-time
-			   "1 sec" nil 'delete-windows-on
-			   (get-buffer-create "*compilation*"))
-			  (message "No Compilation Errors!")))))
+      (lambda (buf str)
+	(if (null (string-match ".*exited abnormally.*" str))
+	    ;;no errors, make the compilation window go away in a few seconds
+	    (progn
+	      (run-at-time
+	       "1 sec" nil 'delete-windows-on
+	       (get-buffer-create "*compilation*"))
+	      (message "No Compilation Errors!")))))
 
 ;; User customization for Verilog mode
 (setq verilog-indent-level             4
@@ -338,7 +329,10 @@ and you can reconfigure the compile args."
 (add-hook 'asm-mode-hook 'helm-gtags-mode)
 
 ;; customize
-
+(custom-set-variables
+ '(helm-gtags-path-style 'relative)
+ '(helm-gtags-ignore-case t)
+ '(helm-gtags-auto-update t))
 
 ;; key bindings
 (with-eval-after-load 'helm-gtags
@@ -356,7 +350,7 @@ and you can reconfigure the compile args."
 (global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
 
 (global-set-key (kbd "C-t") 'mc/mark-next-like-this)
-;(global-set-key (kbd "C-q") 'mc/mark-previous-like-this)
+;;(global-set-key (kbd "C-q") 'mc/mark-previous-like-this)
 (global-set-key (kbd "C-c C-t") 'mc/mark-all-like-this)
 
 ;; Auto close parens
@@ -419,7 +413,7 @@ and you can reconfigure the compile args."
 
 ;; Adjust auto-fill-mode for Markdown
 (defun my-markdown-mode-hook ()
-       (auto-fill-mode t))
+  (auto-fill-mode t))
 
 (add-hook 'markdown-mode-hook 'my-markdown-mode-hook)
 
@@ -455,11 +449,5 @@ and you can reconfigure the compile args."
 		(setq indent-tabs-mode t)
 		(setq show-trailing-whitespace t)
 		(c-set-style "linux-tabs-only")))))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
 
 (setq ruby-indent-level 4)

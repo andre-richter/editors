@@ -8,7 +8,6 @@ if ! [[ -x "$(command -v emacs)" ]]; then
 fi
 
 rm -rf ~/.emacs.d
-rm ~/.emacs.d/init.el
 
 mkdir ~/.emacs.d
 ln -s ~/repos/editors/init.el ~/.emacs.d/init.el
