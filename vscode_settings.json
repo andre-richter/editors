@@ -7,25 +7,17 @@
     "workbench.colorCustomizations": {
         "editor.background": "#202020",
     },
+    "editor.semanticTokenColorCustomizations": {
+        "enabled": true,
+        "rules": {
+            "comment": "#2AA198",
+            "*.documentation": "#708090",
+            "keyword": "#e5c07bff",
+            "type": "#82A6DF"
+        }
+    },
     "editor.tokenColorCustomizations": {
         "textMateRules": [
-            {
-                "scope": [
-                    "comment",
-                    "punctuation.definition.comment"
-                ],
-                "settings": {
-                    "foreground": "#2AA198",
-                }
-            },
-            {
-                "scope": [
-                    "comment.line.documentation"
-                ],
-                "settings": {
-                    "foreground": "#708090",
-                }
-            },
             {
                 "scope": [
                     "keyword",
