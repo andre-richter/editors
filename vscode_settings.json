@@ -4,26 +4,35 @@
     "telemetry.enableCrashReporter": false,
     "window.zoomLevel": 0,
     "C_Cpp.updateChannel": "Insiders",
-    "workbench.colorTheme": "One Dark Pro",
-    "workbench.colorCustomizations":{
+    "workbench.colorCustomizations": {
         "editor.background": "#202020",
     },
     "editor.tokenColorCustomizations": {
         "textMateRules": [
             {
-                "scope": ["comment", "punctuation.definition.comment"],
+                "scope": [
+                    "comment",
+                    "punctuation.definition.comment"
+                ],
                 "settings": {
                     "foreground": "#2AA198",
                 }
             },
             {
-                "scope": ["comment.line.documentation"],
+                "scope": [
+                    "comment.line.documentation"
+                ],
                 "settings": {
                     "foreground": "#708090",
                 }
             },
             {
-                "scope": ["keyword", "keyword.control", "keyword.operator.new", "storage.modifier",],
+                "scope": [
+                    "keyword",
+                    "keyword.control",
+                    "keyword.operator.new",
+                    "storage.modifier",
+                ],
                 "settings": {
                     "foreground": "#e5c07bff"
                 }
@@ -35,19 +44,35 @@
                 }
             },
             {
-                "scope": ["storage.type"],
+                "scope": [
+                    "storage.type"
+                ],
                 "settings": {
                     "foreground": "#82A6DF"
                 }
             },
             {
-                "scope": ["keyword.operator.cpp", "keyword.operator.increment.cpp", "keyword.operator.comparison.cpp", "keyword.operator.ternary.cpp", "keyword.operator.logical.cpp"],
+                "scope": "entity.name.type",
+                "settings": {
+                    "foreground": "#82A6DF"
+                }
+            },
+            {
+                "scope": [
+                    "keyword.operator.cpp",
+                    "keyword.operator.increment.cpp",
+                    "keyword.operator.comparison.cpp",
+                    "keyword.operator.ternary.cpp",
+                    "keyword.operator.logical.cpp"
+                ],
                 "settings": {
                     "foreground": "#ffe01a"
                 }
             },
             {
-                "scope": ["keyword.operator.assignment.cpp",],
+                "scope": [
+                    "keyword.operator.assignment.cpp",
+                ],
                 "settings": {
                     "foreground": "#abb2bf"
                 }
@@ -67,15 +92,20 @@
     "editor.rulers": [
         100
     ],
-    "ruby.format": "rubocop",
-    "ruby.intellisense": "rubyLocate",
-    "ruby.useLanguageServer": true,
-    "ruby.codeCompletion": "rcodetools",
+    "ruby.useBundler": true, //run non-lint commands with bundle exec
+    "ruby.useLanguageServer": true, // use the internal language server (see below)
     "ruby.lint": {
-        "rubocop": true
+        "rubocop": {
+            "useBundler": true // enable rubocop via bundler
+        },
+        "reek": {
+            "useBundler": true // enable reek via bundler
+        }
     },
+    "ruby.format": "rubocop", // use rubocop for formatting
     "C_Cpp.clang_format_fallbackStyle": "{ BasedOnStyle: Google, IndentWidth: 4 }",
     "C_Cpp.default.cppStandard": "c++14",
     "editor.tabSize": 8,
     "gitlens.codeLens.enabled": false,
+    "workbench.colorTheme": "One Dark Pro",
 }
