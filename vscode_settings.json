@@ -20,6 +20,15 @@
         "textMateRules": [
             {
                 "scope": [
+                    "punctuation.definition.comment.cpp",
+                    "comment.line.double-slash.cpp"
+                ],
+                "settings": {
+                    "foreground": "#2AA198"
+                }
+            },
+            {
+                "scope": [
                     "keyword",
                     "keyword.control",
                     "keyword.operator.new",
@@ -90,9 +99,9 @@
         "rubocop": {
             "useBundler": true // enable rubocop via bundler
         },
-        "reek": {
-            "useBundler": true // enable reek via bundler
-        }
+        // "reek": {
+        //     "useBundler": true // enable reek via bundler
+        // }
     },
     "ruby.format": "rubocop", // use rubocop for formatting
     "C_Cpp.clang_format_fallbackStyle": "{ BasedOnStyle: Google, IndentWidth: 4 }",
