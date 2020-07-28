@@ -93,15 +93,12 @@
     "editor.rulers": [
         100
     ],
-    "ruby.useBundler": true, //run non-lint commands with bundle exec
-    "ruby.useLanguageServer": true, // use the internal language server (see below)
+    "ruby.useBundler": true, // use the internal language server (see below)
+    "ruby.useLanguageServer": true,
     "ruby.lint": {
         "rubocop": {
             "useBundler": true // enable rubocop via bundler
-        },
-        // "reek": {
-        //     "useBundler": true // enable reek via bundler
-        // }
+        }
     },
     "ruby.format": "rubocop", // use rubocop for formatting
     "C_Cpp.clang_format_fallbackStyle": "{ BasedOnStyle: Google, IndentWidth: 4 }",
@@ -109,4 +106,7 @@
     "editor.tabSize": 8,
     "gitlens.codeLens.enabled": false,
     "workbench.colorTheme": "One Dark Pro",
+    "[toml]": {
+        "editor.formatOnSave": false
+    }
 }
