@@ -21,7 +21,12 @@
             {
                 "scope": [
                     "punctuation.definition.comment.cpp",
-                    "comment.line.double-slash.cpp"
+                    "comment.line.double-slash.cpp",
+                    "punctuation.definition.comment.c",
+                    "comment.line.double-slash.c",
+                    "comment.block.c",
+                    "punctuation.definition.comment.begin.c",
+                    "punctuation.definition.comment.end.c",
                 ],
                 "settings": {
                     "foreground": "#2AA198"
