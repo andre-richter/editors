@@ -100,8 +100,10 @@
 ;;Melpa
 (require 'package)
 (package-initialize)
-(add-to-list 'package-archives
-	     '("melpa" . "http://melpa.milkbox.net/packages/") t)
+(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
+
+;; Git change highlighting
+(global-git-gutter-mode +1)
 
 ;; Integrate clipboard with X11
 (xclip-mode 1)
