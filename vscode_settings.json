@@ -3,6 +3,7 @@
     "telemetry.enableTelemetry": false,
     "telemetry.enableCrashReporter": false,
     "window.zoomLevel": 0,
+    "window.titleBarStyle": "custom",
     "C_Cpp.updateChannel": "Insiders",
     "workbench.colorCustomizations": {
         "editor.background": "#202020",
