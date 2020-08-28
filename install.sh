@@ -16,13 +16,8 @@ mkdir ~/.emacs.d/lisp
 echo "Install dependencies:"
 
 # C/C++
-sudo apt-get install clang libclang-dev global cmake xclip
+sudo apt install xclip
 ./emacs_pkgs.el
-
-mkdir /tmp/irony
-cd /tmp/irony
-cmake -DCMAKE_INSTALL_PREFIX\=~/.emacs.d/irony/ `find ~/.emacs.d/elpa -maxdepth 1 -type d -name 'irony*'`/server && cmake --build . --use-stderr --config Release --target install
-rm -rf /tmp/irony
 
 echo "!!!!!!!!"
 echo "Remember to install One Dark Pro theme for vscode"

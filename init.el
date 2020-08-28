@@ -102,9 +102,6 @@
 (package-initialize)
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
 
-;; Git change highlighting
-(global-git-gutter-mode +1)
-
 ;; Integrate clipboard with X11
 (xclip-mode 1)
 
@@ -209,10 +206,19 @@
 
 ;; correlation between pdf viewer and emacs sources
 (custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
  '(TeX-source-correlate-mode t)
  '(TeX-source-correlate-start-server t)
- '(reftex-toc-split-windows-horizontally t)
- )
+ '(helm-gtags-auto-update t)
+ '(helm-gtags-ignore-case t)
+ '(helm-gtags-path-style (quote relative))
+ '(package-selected-packages
+   (quote
+    (git-gutter yaml-mode xclip toml-mode rubocop nasm-mode multiple-cursors markdown-mode lush-theme json-mode helm-gtags dts-mode dockerfile-mode)))
+ '(reftex-toc-split-windows-horizontally t))
 
 '(reftex-use-external-file-finders t)
 (setq reftex-ref-macro-prompt nil)
@@ -331,10 +337,7 @@ and you can reconfigure the compile args."
 (add-hook 'asm-mode-hook 'helm-gtags-mode)
 
 ;; customize
-(custom-set-variables
- '(helm-gtags-path-style 'relative)
- '(helm-gtags-ignore-case t)
- '(helm-gtags-auto-update t))
+
 
 ;; key bindings
 (with-eval-after-load 'helm-gtags
@@ -369,49 +372,6 @@ and you can reconfigure the compile args."
 (add-hook 'verilog-mode-hook 'spaces-only)
 (add-hook 'dockerfile-mode-hook 'spaces-only)
 (add-hook 'asm-mode-hook 'spaces-only)
-
-;;
-;; Company mode
-;;
-(add-hook 'after-init-hook 'global-company-mode)
-
-(add-hook 'c++-mode-hook 'irony-mode)
-(add-hook 'c-mode-hook 'irony-mode)
-(add-hook 'objc-mode-hook 'irony-mode)
-
-;; replace the `completion-at-point' and `complete-symbol' bindings in
-;; irony-mode's buffers by irony-mode's function
-(defun my-irony-mode-hook ()
-  (define-key irony-mode-map [remap completion-at-point]
-    'irony-completion-at-point-async)
-  (define-key irony-mode-map [remap complete-symbol]
-    'irony-completion-at-point-async))
-(add-hook 'irony-mode-hook 'my-irony-mode-hook)
-(add-hook 'irony-mode-hook 'irony-cdb-autosetup-compile-options)
-
-(eval-after-load 'company
-  '(add-to-list 'company-backends 'company-irony))
-
-(eval-after-load 'company
-  '(add-to-list 'company-backends 'company-files))
-
-(require 'company-irony-c-headers)
-;; Load with `irony-mode` as a grouped backend
-(eval-after-load 'company
-  '(add-to-list
-    'company-backends '(company-irony-c-headers company-irony)))
-
-(global-set-key (kbd "C-c f") 'company-files)
-(global-set-key (kbd "C-c c") 'company-complete)
-
-;; Rust support
-(add-hook 'rust-mode-hook #'racer-mode)
-(add-hook 'racer-mode-hook #'eldoc-mode)
-(add-hook 'racer-mode-hook #'company-mode)
-
-(require 'rust-mode)
-(define-key rust-mode-map (kbd "TAB") #'company-indent-or-complete-common)
-(setq company-tooltip-align-annotations t)
 
 ;; Adjust auto-fill-mode for Markdown
 (defun my-markdown-mode-hook ()
@@ -453,3 +413,9 @@ and you can reconfigure the compile args."
 		(c-set-style "linux-tabs-only")))))
 
 (setq ruby-indent-level 4)
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
