@@ -1,118 +1,119 @@
 {
-    "files.trimTrailingWhitespace": true,
-    "telemetry.enableTelemetry": false,
-    "telemetry.enableCrashReporter": false,
-    "window.zoomLevel": 0,
-    "window.titleBarStyle": "custom",
-    "C_Cpp.updateChannel": "Insiders",
-    "workbench.colorCustomizations": {
-        "editor.background": "#202020",
-    },
-    "editor.semanticTokenColorCustomizations": {
-        "enabled": true,
-        "rules": {
-            "comment": "#2AA198",
-            "*.documentation": "#708090",
-            "keyword": "#e5c07bff",
-            "type": "#82A6DF"
-        }
-    },
-    "editor.tokenColorCustomizations": {
-        "textMateRules": [
-            {
-                "scope": [
-                    "punctuation.definition.comment.cpp",
-                    "comment.line.double-slash.cpp",
-                    "punctuation.definition.comment.c",
-                    "comment.line.double-slash.c",
-                    "comment.block.c",
-                    "punctuation.definition.comment.begin.c",
-                    "punctuation.definition.comment.end.c",
-                ],
-                "settings": {
-                    "foreground": "#2AA198"
-                }
-            },
-            {
-                "scope": [
-                    "keyword",
-                    "keyword.control",
-                    "keyword.operator.new",
-                    "storage.modifier",
-                ],
-                "settings": {
-                    "foreground": "#e5c07bff"
-                }
-            },
-            {
-                "scope": "entity.name.type.namespace",
-                "settings": {
-                    "foreground": "#ffa033"
-                }
-            },
-            {
-                "scope": [
-                    "storage.type"
-                ],
-                "settings": {
-                    "foreground": "#82A6DF"
-                }
-            },
-            {
-                "scope": "entity.name.type",
-                "settings": {
-                    "foreground": "#82A6DF"
-                }
-            },
-            {
-                "scope": [
-                    "keyword.operator.cpp",
-                    "keyword.operator.increment.cpp",
-                    "keyword.operator.comparison.cpp",
-                    "keyword.operator.ternary.cpp",
-                    "keyword.operator.logical.cpp"
-                ],
-                "settings": {
-                    "foreground": "#ffe01a"
-                }
-            },
-            {
-                "scope": [
-                    "keyword.operator.assignment.cpp",
-                ],
-                "settings": {
-                    "foreground": "#abb2bf"
-                }
-            },
-            {
-                "scope": "entity.name.function",
-                "settings": {
-                    "foreground": "#cb85e0"
-                }
-            }
-        ]
-    },
-    "workbench.editor.enablePreview": false,
-    "workbench.editor.enablePreviewFromQuickOpen": false,
-    "rewrap.wholeComment": false,
-    "editor.fontSize": 14.5,
-    "editor.rulers": [
-        100
-    ],
-    "ruby.useBundler": true, // use the internal language server (see below)
-    "ruby.useLanguageServer": true,
-    "ruby.lint": {
-        "rubocop": {
-            "useBundler": true // enable rubocop via bundler
-        }
-    },
-    "ruby.format": "rubocop", // use rubocop for formatting
-    "C_Cpp.clang_format_fallbackStyle": "{ BasedOnStyle: Google, IndentWidth: 4 }",
-    "C_Cpp.default.cppStandard": "c++14",
-    "editor.tabSize": 8,
-    "gitlens.codeLens.enabled": false,
-    "workbench.colorTheme": "One Dark Pro",
-    "[toml]": {
-        "editor.formatOnSave": false
+  "files.trimTrailingWhitespace": true,
+  "telemetry.enableTelemetry": false,
+  "telemetry.enableCrashReporter": false,
+  "window.zoomLevel": 0,
+  "window.titleBarStyle": "custom",
+  "C_Cpp.updateChannel": "Insiders",
+  "workbench.colorCustomizations": {
+    "editor.background": "#202020"
+  },
+  "editor.semanticTokenColorCustomizations": {
+    "enabled": true,
+    "rules": {
+      "comment": "#2AA198",
+      "*.documentation": "#708090",
+      "keyword": "#e5c07bff",
+      "type": "#82A6DF"
     }
+  },
+  "editor.tokenColorCustomizations": {
+    "textMateRules": [
+      {
+        "scope": [
+          "punctuation.definition.comment.cpp",
+          "comment.line.double-slash.cpp",
+          "punctuation.definition.comment.c",
+          "comment.line.double-slash.c",
+          "comment.block.c",
+          "punctuation.definition.comment.begin.c",
+          "punctuation.definition.comment.end.c"
+        ],
+        "settings": {
+          "foreground": "#2AA198"
+        }
+      },
+      {
+        "scope": [
+          "keyword",
+          "keyword.control",
+          "keyword.operator.new",
+          "storage.modifier"
+        ],
+        "settings": {
+          "foreground": "#e5c07bff"
+        }
+      },
+      {
+        "scope": "entity.name.type.namespace",
+        "settings": {
+          "foreground": "#ffa033"
+        }
+      },
+      {
+        "scope": ["storage.type"],
+        "settings": {
+          "foreground": "#82A6DF"
+        }
+      },
+      {
+        "scope": "entity.name.type",
+        "settings": {
+          "foreground": "#82A6DF"
+        }
+      },
+      {
+        "scope": [
+          "keyword.operator.cpp",
+          "keyword.operator.increment.cpp",
+          "keyword.operator.comparison.cpp",
+          "keyword.operator.ternary.cpp",
+          "keyword.operator.logical.cpp"
+        ],
+        "settings": {
+          "foreground": "#ffe01a"
+        }
+      },
+      {
+        "scope": ["keyword.operator.assignment.cpp"],
+        "settings": {
+          "foreground": "#abb2bf"
+        }
+      },
+      {
+        "scope": "entity.name.function",
+        "settings": {
+          "foreground": "#cb85e0"
+        }
+      }
+    ]
+  },
+  "workbench.editor.enablePreview": false,
+  "workbench.editor.enablePreviewFromQuickOpen": false,
+  "rewrap.wholeComment": false,
+  "editor.fontSize": 14.5,
+  "editor.rulers": [100],
+  "ruby.useBundler": true, // use the internal language server (see below)
+  "ruby.useLanguageServer": true,
+  "ruby.lint": {
+    "rubocop": {
+      "useBundler": true // enable rubocop via bundler
+    }
+  },
+  "ruby.format": "rubocop", // use rubocop for formatting
+  "C_Cpp.clang_format_fallbackStyle": "{ BasedOnStyle: Google, IndentWidth: 4 }",
+  "C_Cpp.default.cppStandard": "c++14",
+  "editor.tabSize": 8,
+  "gitlens.codeLens.enabled": false,
+  "workbench.colorTheme": "One Dark Pro",
+  "[toml]": {
+    "editor.formatOnSave": false
+  },
+  // Disable Prettier for Markdown until
+  //    - https://github.com/prettier/prettier/issues/5299
+  //    - https://github.com/prettier/prettier/issues/5019
+  // are fixed.
+  "[markdown]": {
+    "editor.defaultFormatter": "vscode.markdown-language-features"
+  }
 }
