@@ -2,7 +2,6 @@
   "files.trimTrailingWhitespace": true,
   "telemetry.enableTelemetry": false,
   "telemetry.enableCrashReporter": false,
-  "window.zoomLevel": 0,
   "window.titleBarStyle": "custom",
   "C_Cpp.updateChannel": "Insiders",
   "workbench.colorCustomizations": {
@@ -88,8 +87,6 @@
       }
     ]
   },
-  "workbench.editor.enablePreview": false,
-  "workbench.editor.enablePreviewFromQuickOpen": false,
   "rewrap.wholeComment": false,
   "editor.fontSize": 14.5,
   "editor.rulers": [100],
@@ -101,10 +98,6 @@
     }
   },
   "ruby.format": "rubocop", // use rubocop for formatting
-  "C_Cpp.clang_format_fallbackStyle": "{ BasedOnStyle: Google, IndentWidth: 4 }",
-  "C_Cpp.default.cppStandard": "c++14",
-  "editor.tabSize": 8,
-  "gitlens.codeLens.enabled": false,
   "workbench.colorTheme": "One Dark Pro",
   "[toml]": {
     "editor.formatOnSave": false
@@ -115,5 +108,10 @@
   // are fixed.
   "[markdown]": {
     "editor.defaultFormatter": "vscode.markdown-language-features"
-  }
+  },
+  "workbench.startupEditor": "newUntitledFile",
+  "gitlens.codeLens.enabled": false,
+  "gitlens.currentLine.enabled": false,
+  "gitlens.hovers.currentLine.over": "line",
+  "gitlens.hovers.enabled": false,
 }
