@@ -4,114 +4,86 @@
   "telemetry.enableCrashReporter": false,
   "window.titleBarStyle": "custom",
   "C_Cpp.updateChannel": "Insiders",
+  "rewrap.wholeComment": false,
+  "editor.fontSize": 14.5,
+  "editor.rulers": [
+    100
+  ],
+  "workbench.startupEditor": "newUntitledFile",
+  "workbench.colorTheme": "One Dark Pro",
   "workbench.colorCustomizations": {
-    "editor.background": "#202020"
+    "editor.background": "#282828"
   },
+  "editor.bracketPairColorization.enabled": true,
   "editor.semanticTokenColorCustomizations": {
     "enabled": true,
     "rules": {
       "comment": "#2AA198",
-      "*.documentation": "#708090",
-      "keyword": "#e5c07bff",
-      "type": "#82A6DF"
-    }
+    },
   },
   "editor.tokenColorCustomizations": {
     "textMateRules": [
       {
         "scope": [
           "punctuation.definition.comment.cpp",
-          "comment.line.double-slash.cpp",
           "punctuation.definition.comment.c",
-          "comment.line.double-slash.c",
-          "comment.block.c",
           "punctuation.definition.comment.begin.c",
-          "punctuation.definition.comment.end.c"
+          "punctuation.definition.comment.end.c",
+          "punctuation.definition.comment.python",
+          "comment.line.double-slash.cpp",
+          "comment.line.double-slash.c",
+          "comment.line.number-sign.python",
+          "comment.block.c",
         ],
         "settings": {
           "foreground": "#2AA198"
         }
-      },
-      {
-        "scope": [
-          "keyword",
-          "keyword.control",
-          "keyword.operator.new",
-          "storage.modifier"
-        ],
-        "settings": {
-          "foreground": "#e5c07bff"
-        }
-      },
-      {
-        "scope": "entity.name.type.namespace",
-        "settings": {
-          "foreground": "#ffa033"
-        }
-      },
-      {
-        "scope": ["storage.type"],
-        "settings": {
-          "foreground": "#82A6DF"
-        }
-      },
-      {
-        "scope": "entity.name.type",
-        "settings": {
-          "foreground": "#82A6DF"
-        }
-      },
-      {
-        "scope": [
-          "keyword.operator.cpp",
-          "keyword.operator.increment.cpp",
-          "keyword.operator.comparison.cpp",
-          "keyword.operator.ternary.cpp",
-          "keyword.operator.logical.cpp"
-        ],
-        "settings": {
-          "foreground": "#ffe01a"
-        }
-      },
-      {
-        "scope": ["keyword.operator.assignment.cpp"],
-        "settings": {
-          "foreground": "#abb2bf"
-        }
-      },
-      {
-        "scope": "entity.name.function",
-        "settings": {
-          "foreground": "#cb85e0"
-        }
       }
     ]
   },
-  "rewrap.wholeComment": false,
-  "editor.fontSize": 14.5,
-  "editor.rulers": [100],
+  //
+  // Gitlens
+  //
+  "gitlens.codeLens.enabled": false,
+  "gitlens.currentLine.enabled": false,
+  "gitlens.hovers.currentLine.over": "line",
+  "gitlens.hovers.enabled": false,
+  //
+  // Ruby
+  //
   "ruby.useBundler": true, // use the internal language server (see below)
   "ruby.useLanguageServer": true,
+  "ruby.format": "rubocop", // use rubocop for formatting
   "ruby.lint": {
     "rubocop": {
       "useBundler": true // enable rubocop via bundler
     }
   },
-  "ruby.format": "rubocop", // use rubocop for formatting
-  "workbench.colorTheme": "One Dark Pro",
+  //
+  // Python
+  //
+  "python.formatting.provider": "black",
+  "python.linting.mypyEnabled": true,
+  "[python]": {
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": true,
+    },
+  },
+  //
+  // TOML
+  //
   "[toml]": {
     "editor.formatOnSave": false
   },
+  //
+  // Markdown
+  //
   // Disable Prettier for Markdown until
   //    - https://github.com/prettier/prettier/issues/5299
   //    - https://github.com/prettier/prettier/issues/5019
   // are fixed.
   "[markdown]": {
     "editor.defaultFormatter": "vscode.markdown-language-features"
-  },
-  "workbench.startupEditor": "newUntitledFile",
-  "gitlens.codeLens.enabled": false,
-  "gitlens.currentLine.enabled": false,
-  "gitlens.hovers.currentLine.over": "line",
-  "gitlens.hovers.enabled": false,
+  }
 }

@@ -217,7 +217,7 @@
  '(helm-gtags-path-style (quote relative))
  '(package-selected-packages
    (quote
-    (git-gutter yaml-mode xclip toml-mode rubocop nasm-mode multiple-cursors markdown-mode lush-theme json-mode helm-gtags dts-mode dockerfile-mode)))
+    (rust-mode git-gutter yaml-mode xclip toml-mode rubocop nasm-mode multiple-cursors markdown-mode lush-theme json-mode helm-gtags dts-mode dockerfile-mode)))
  '(reftex-toc-split-windows-horizontally t))
 
 '(reftex-use-external-file-finders t)
