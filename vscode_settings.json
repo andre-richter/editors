@@ -64,6 +64,12 @@
   //
   "python.formatting.provider": "black",
   "python.linting.mypyEnabled": true,
+  "python.linting.pylintEnabled": true,
+  "python.linting.pylintArgs": [
+    "--disable=C0114", // missing-module-docstring
+    "--disable=C0115", // missing-class-docstring
+    "--disable=C0116", // missing-function-docstring
+  ],
   "[python]": {
     "editor.formatOnSave": true,
     "editor.codeActionsOnSave": {
@@ -85,5 +91,5 @@
   // are fixed.
   "[markdown]": {
     "editor.defaultFormatter": "vscode.markdown-language-features"
-  }
+  },
 }
