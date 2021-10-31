@@ -1,7 +1,6 @@
 {
+  "telemetry.telemetryLevel": "off",
   "files.trimTrailingWhitespace": true,
-  "telemetry.enableTelemetry": false,
-  "telemetry.enableCrashReporter": false,
   "window.titleBarStyle": "custom",
   "C_Cpp.updateChannel": "Insiders",
   "rewrap.wholeComment": false,
@@ -19,6 +18,7 @@
     "enabled": true,
     "rules": {
       "comment": "#2AA198",
+      "comment.documentation": "#7f848e",
     },
   },
   "editor.tokenColorCustomizations": {
