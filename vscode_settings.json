@@ -77,6 +77,12 @@
     },
   },
   //
+  // Dockerfile
+  //
+  "[dockerfile]": {
+    "editor.formatOnSave": false
+  },
+  //
   // TOML
   //
   "[toml]": {
