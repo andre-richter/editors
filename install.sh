@@ -23,5 +23,7 @@ echo "!!!!!!!!"
 echo "Remember to install One Dark Pro theme for vscode"
 echo "!!!!!!!!"
 rm ~/.config/Code/User/settings.json
+rm ~/.config/Code/User/keybindings.json
 mkdir -p ~/.config/Code/User/
 ln -s ~/repos/editors/vscode_settings.json ~/.config/Code/User/settings.json
+ln -s ~/repos/editors/vscode_keybindings.json ~/.config/Code/User/keybindings.json
