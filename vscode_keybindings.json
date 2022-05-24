@@ -60,5 +60,9 @@
         "key": "home",
         "command": "-cursorHome",
         "when": "textInputFocus"
+    },
+    {
+        "key": "ctrl+k",
+        "command": "deleteAllRight"
     }
 ]
