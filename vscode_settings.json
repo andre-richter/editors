@@ -4,7 +4,7 @@
   "window.titleBarStyle": "custom",
   "C_Cpp.updateChannel": "Insiders",
   "rewrap.wholeComment": false,
-  "editor.fontSize": 14.5,
+  "editor.fontSize": 15.5,
   "editor.rulers": [
     100
   ],
@@ -61,7 +61,7 @@
   //
   // Python
   //
-  "python.formatting.provider": "black",
+  "python.formatting.provider": "none",
   "python.linting.mypyEnabled": true,
   "python.linting.pylintEnabled": true,
   "python.linting.pylintArgs": [
@@ -103,4 +103,5 @@
   "files.associations": {
     "*.tmk": "makefile"
   },
+  "editor.renderWhitespace": "boundary",
 }
